@@ -1,0 +1,13 @@
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\bin\Debug\Linqdemo.exe.config
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\bin\Debug\Linqdemo.exe
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\bin\Debug\Linqdemo.pdb
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form1.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Properties.Resources.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.exe
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.pdb
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form2.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form3.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form4.resources
