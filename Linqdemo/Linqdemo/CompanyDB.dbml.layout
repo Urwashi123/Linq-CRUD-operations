@@ -8,5 +8,17 @@
         <elementListCompartment Id="e89d1003-1853-4319-90eb-0420fcbc89b8" absoluteBounds="0.89, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="b154abc3-c8d8-496c-8eca-b56afa592db5" absoluteBounds="3.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CompanyDBDataContext/Dept" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f797cca5-86f2-4251-bcf7-74bf7376f37b" absoluteBounds="3.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="211cb4f0-63af-4636-b1fa-0e1bf9aecb75" absoluteBounds="3.375, 3.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/CompanyDBDataContext/Emp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cff61432-9581-4908-ba56-f0cc3646f2f6" absoluteBounds="3.3899999999999997, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

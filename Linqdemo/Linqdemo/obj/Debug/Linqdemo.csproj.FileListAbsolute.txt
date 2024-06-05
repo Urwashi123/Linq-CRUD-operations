@@ -11,3 +11,6 @@ C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.pdb
 C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form2.resources
 C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form3.resources
 C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form4.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form5.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form6.resources
+C:\Users\admin\source\repos\Linqdemo\Linqdemo\obj\Debug\Linqdemo.Form7.resources

@@ -9,6 +9,25 @@
       <Column Name="Dname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Dept" Member="Depts">
+    <Type Name="Dept">
+      <Column Name="Deptno" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Loc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Emp" Member="Emps">
+    <Type Name="Emp">
+      <Column Name="Empno" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Empname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Job" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Manager" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hiredate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Salary" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Commision" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Deptno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.Employee_Select" Method="Employee_Select">
     <Parameter Name="Dname" Parameter="dname" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="Employee_SelectResult">

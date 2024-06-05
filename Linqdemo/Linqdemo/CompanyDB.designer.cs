@@ -33,6 +33,12 @@ namespace Linqdemo
     partial void InsertEmployee(Employee instance);
     partial void UpdateEmployee(Employee instance);
     partial void DeleteEmployee(Employee instance);
+    partial void InsertDept(Dept instance);
+    partial void UpdateDept(Dept instance);
+    partial void DeleteDept(Dept instance);
+    partial void InsertEmp(Emp instance);
+    partial void UpdateEmp(Emp instance);
+    partial void DeleteEmp(Emp instance);
     #endregion
 		
 		public CompanyDBDataContext() : 
@@ -73,6 +79,22 @@ namespace Linqdemo
 			}
 		}
 		
+		public System.Data.Linq.Table<Dept> Depts
+		{
+			get
+			{
+				return this.GetTable<Dept>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Emp> Emps
+		{
+			get
+			{
+				return this.GetTable<Emp>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Employee_Select")]
 		public ISingleResult<Employee_SelectResult> Employee_Select([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Dname", DbType="VarChar(50)")] string dname)
 		{
@@ -87,7 +109,12 @@ namespace Linqdemo
 			eno = ((System.Nullable<int>)(result.GetParameterValue(4)));
 			return ((int)(result.ReturnValue));
 		}
-	}
+
+        internal ISingleResult<Employee_SelectResult> Employee_Select()
+        {
+            throw new NotImplementedException();
+        }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Employee")]
 	public partial class Employee : INotifyPropertyChanging, INotifyPropertyChanged
@@ -222,6 +249,346 @@ namespace Linqdemo
 					this._Dname = value;
 					this.SendPropertyChanged("Dname");
 					this.OnDnameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Dept")]
+	public partial class Dept : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Deptno;
+		
+		private string _Dname;
+		
+		private string _Loc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDeptnoChanging(int value);
+    partial void OnDeptnoChanged();
+    partial void OnDnameChanging(string value);
+    partial void OnDnameChanged();
+    partial void OnLocChanging(string value);
+    partial void OnLocChanged();
+    #endregion
+		
+		public Dept()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deptno", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Deptno
+		{
+			get
+			{
+				return this._Deptno;
+			}
+			set
+			{
+				if ((this._Deptno != value))
+				{
+					this.OnDeptnoChanging(value);
+					this.SendPropertyChanging();
+					this._Deptno = value;
+					this.SendPropertyChanged("Deptno");
+					this.OnDeptnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dname", DbType="NVarChar(50)")]
+		public string Dname
+		{
+			get
+			{
+				return this._Dname;
+			}
+			set
+			{
+				if ((this._Dname != value))
+				{
+					this.OnDnameChanging(value);
+					this.SendPropertyChanging();
+					this._Dname = value;
+					this.SendPropertyChanged("Dname");
+					this.OnDnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Loc", DbType="NVarChar(50)")]
+		public string Loc
+		{
+			get
+			{
+				return this._Loc;
+			}
+			set
+			{
+				if ((this._Loc != value))
+				{
+					this.OnLocChanging(value);
+					this.SendPropertyChanging();
+					this._Loc = value;
+					this.SendPropertyChanged("Loc");
+					this.OnLocChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Emp")]
+	public partial class Emp : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Empno;
+		
+		private string _Empname;
+		
+		private string _Job;
+		
+		private string _Manager;
+		
+		private System.Nullable<System.DateTime> _Hiredate;
+		
+		private System.Nullable<decimal> _Salary;
+		
+		private System.Nullable<decimal> _Commision;
+		
+		private System.Nullable<int> _Deptno;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmpnoChanging(int value);
+    partial void OnEmpnoChanged();
+    partial void OnEmpnameChanging(string value);
+    partial void OnEmpnameChanged();
+    partial void OnJobChanging(string value);
+    partial void OnJobChanged();
+    partial void OnManagerChanging(string value);
+    partial void OnManagerChanged();
+    partial void OnHiredateChanging(System.Nullable<System.DateTime> value);
+    partial void OnHiredateChanged();
+    partial void OnSalaryChanging(System.Nullable<decimal> value);
+    partial void OnSalaryChanged();
+    partial void OnCommisionChanging(System.Nullable<decimal> value);
+    partial void OnCommisionChanged();
+    partial void OnDeptnoChanging(System.Nullable<int> value);
+    partial void OnDeptnoChanged();
+    #endregion
+		
+		public Emp()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empno", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Empno
+		{
+			get
+			{
+				return this._Empno;
+			}
+			set
+			{
+				if ((this._Empno != value))
+				{
+					this.OnEmpnoChanging(value);
+					this.SendPropertyChanging();
+					this._Empno = value;
+					this.SendPropertyChanged("Empno");
+					this.OnEmpnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empname", DbType="NVarChar(50)")]
+		public string Empname
+		{
+			get
+			{
+				return this._Empname;
+			}
+			set
+			{
+				if ((this._Empname != value))
+				{
+					this.OnEmpnameChanging(value);
+					this.SendPropertyChanging();
+					this._Empname = value;
+					this.SendPropertyChanged("Empname");
+					this.OnEmpnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Job", DbType="NVarChar(50)")]
+		public string Job
+		{
+			get
+			{
+				return this._Job;
+			}
+			set
+			{
+				if ((this._Job != value))
+				{
+					this.OnJobChanging(value);
+					this.SendPropertyChanging();
+					this._Job = value;
+					this.SendPropertyChanged("Job");
+					this.OnJobChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager", DbType="NVarChar(50)")]
+		public string Manager
+		{
+			get
+			{
+				return this._Manager;
+			}
+			set
+			{
+				if ((this._Manager != value))
+				{
+					this.OnManagerChanging(value);
+					this.SendPropertyChanging();
+					this._Manager = value;
+					this.SendPropertyChanged("Manager");
+					this.OnManagerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hiredate", DbType="Date")]
+		public System.Nullable<System.DateTime> Hiredate
+		{
+			get
+			{
+				return this._Hiredate;
+			}
+			set
+			{
+				if ((this._Hiredate != value))
+				{
+					this.OnHiredateChanging(value);
+					this.SendPropertyChanging();
+					this._Hiredate = value;
+					this.SendPropertyChanged("Hiredate");
+					this.OnHiredateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salary", DbType="Money")]
+		public System.Nullable<decimal> Salary
+		{
+			get
+			{
+				return this._Salary;
+			}
+			set
+			{
+				if ((this._Salary != value))
+				{
+					this.OnSalaryChanging(value);
+					this.SendPropertyChanging();
+					this._Salary = value;
+					this.SendPropertyChanged("Salary");
+					this.OnSalaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Commision", DbType="Money")]
+		public System.Nullable<decimal> Commision
+		{
+			get
+			{
+				return this._Commision;
+			}
+			set
+			{
+				if ((this._Commision != value))
+				{
+					this.OnCommisionChanging(value);
+					this.SendPropertyChanging();
+					this._Commision = value;
+					this.SendPropertyChanged("Commision");
+					this.OnCommisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Deptno", DbType="Int")]
+		public System.Nullable<int> Deptno
+		{
+			get
+			{
+				return this._Deptno;
+			}
+			set
+			{
+				if ((this._Deptno != value))
+				{
+					this.OnDeptnoChanging(value);
+					this.SendPropertyChanging();
+					this._Deptno = value;
+					this.SendPropertyChanged("Deptno");
+					this.OnDeptnoChanged();
 				}
 			}
 		}

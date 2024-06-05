@@ -13,6 +13,7 @@ namespace Linqdemo
 {
     public partial class Form5 : Form
     {
+        CompanyDBDataContext db;
         public Form5()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace Linqdemo
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CompanyDBDataContext db = new CompanyDBDataContext();
+             db = new CompanyDBDataContext();
             ISingleResult<Employee_SelectResult>tab =  db.Employee_Select();
             dataGridView1.DataSource = tab;
 
